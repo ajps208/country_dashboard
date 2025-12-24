@@ -1,0 +1,304 @@
+ /* RESET & GLOBAL  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* THEME */
+body.light {
+  background: #f4f6f8;
+  color: #111827;
+}
+
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .navbar {
+  background: #020617;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.nav-center {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* SEARCH & FILTER */
+.search-input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  min-width: 220px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+}
+
+.filter-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  background: white;
+  outline: none;
+}
+
+body.dark .search-input,
+body.dark .filter-select {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+/* THEME BUTTON  */
+.theme-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  background: #1d4ed8;
+}
+
+/* GRID LAYOUT */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* COUNTRY CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.dark .card {
+  background: #020617;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 12px;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 4px 12px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* CARD ACTIONS */
+.actions {
+  margin-top: auto;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.actions button {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #facc15;
+}
+
+/* LOAD MORE BUTTON  */
+button {
+  padding: 10px 18px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* SKELETON LOADER  */
+.skeleton-card {
+  height: 280px;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite ease;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.8;
+}
+
+/* COUNTRY DETAILS PAGE */
+.details {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.details-header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.details-flag {
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.details-info h2 {
+  margin-bottom: 12px;
+}
+
+.details-info p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* Weather Card */
+.weather-card {
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 420px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .weather-card {
+  background: #020617;
+}
+
+/* RESPONSIVE (MOBILE) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-center {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .filter-select {
+    width: 100%;
+  }
+
+  .grid {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .details-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-flag {
+    width: 100%;
+    max-width: 360px;
+  }
+}
