@@ -10,6 +10,16 @@ React (Functional Components & Hooks), Vite, JavaScript, Axios, React Router DOM
 
 ---
 
+## 🔗 Live Links
+
+- **🚀 Deployed Application:**  
+  https://country-dashboard-psi.vercel.app/
+
+- **📦 GitHub Repository:**  
+  https://github.com/ajps208/country_dashboard
+
+---
+
 ## ✨ Features
 
 ### Core Features
