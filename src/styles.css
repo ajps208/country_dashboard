@@ -302,3 +302,15 @@ body.dark .weather-card {
     max-width: 360px;
   }
 }
+
+/* theme icons */
+.theme-icon {
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.theme-icon:hover {
+  transform: scale(1.15);
+}

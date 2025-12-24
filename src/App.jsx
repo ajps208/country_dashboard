@@ -7,18 +7,20 @@ import SearchBar from "./components/SearchBar";
 import Filters from "./components/Filters";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import { FiSun, FiMoon } from "react-icons/fi";
 import "./styles.css";
 
 // Top navigation bar
 function Navbar({ search, setSearch, region, setRegion }) {
   // Theme toggle function
-  const { toggleTheme } = useTheme();
-
+  const { theme, toggleTheme } = useTheme();
   return (
     <nav className="navbar">
       {/* Left side links */}
       <div className="nav-left">
-        <Link to="/" className="logo">🌍 Countries</Link>
+        <Link to="/" className="logo">
+          🌍 Countries
+        </Link>
         <Link to="/favorites">Favorites</Link>
       </div>
 
@@ -29,9 +31,9 @@ function Navbar({ search, setSearch, region, setRegion }) {
       </div>
 
       {/* Theme toggle button */}
-      <button className="theme-btn" onClick={toggleTheme}>
-        Theme
-      </button>
+      <div className="theme-icon" onClick={toggleTheme}>
+        {theme === "light" ? <FiMoon /> : <FiSun />}
+      </div>
     </nav>
   );
 }
@@ -61,12 +63,7 @@ export default function App() {
           <Routes>
             <Route
               path="/"
-              element={
-                <CountryList
-                  search={search}
-                  region={region}
-                />
-              }
+              element={<CountryList search={search} region={region} />}
             />
             <Route path="/country/:code" element={<CountryDetails />} />
             <Route path="/favorites" element={<Favorites />} />
